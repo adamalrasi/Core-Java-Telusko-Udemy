@@ -1,28 +1,37 @@
 package Hello;
 
-public class Hello {
-    public static void main(String[] args) {
-        int nums[][] = new int[3][4];
-        int rand = 0;
-        
-        for(int i = 0; i< 3; i++){
-            for(int j = 0; j < 4; j++){
-                nums[i][j] = (int)(Math.random() * 10);
-                System.out.print(nums[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        for(int n[]: nums){
-            for(int m: n){
-                System.out.print(m + " ");
-            }
-            System.out.println();
-        }
-
-
+ class A {
+    public void show(){
+        System.out.println("In show");
     }
 
+    private int age;
+    private String name;
+    public A(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
 
+    @Override
+    public String toString() {
+        return "A [age=" + age + ", name=" + name + "]";
+    }
+}
+
+class B extends A {
+    public B(int age, String name){
+        super(age, name);
+    }
+
+   
+}
+
+class Hello {
+    public static void main(String[] args) {
+        B obj = new B(25, "Adam");
+        obj.show();
+        System.out.println(obj.toString());
+        
+    }
 }
 
